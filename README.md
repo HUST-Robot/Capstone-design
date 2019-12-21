@@ -3,9 +3,6 @@
 
 ![KakaoTalk_20191208_190953699](https://user-images.githubusercontent.com/9815703/70439086-91375b80-1ad2-11ea-8cdf-ba4c3953d8dd.jpg)
 
-
-
-
 ## Project Name : Smart Mirror 
 ## Introduction
 사용자가 시간과 노력을 들이지 않아도 일상생활 정보를 시각적으로 확인할 수 있으며, 산업 현장에서는 간편한 모니터링 목적으로도 응용 가능한 스마트 디바이스를 제작한다.
@@ -18,8 +15,13 @@
 인체 감지 센서를 이용하여 사용자를 감지하여 Mirror 테두리 무브등 기능 
 
 ### 음성인식 
-![캡처](https://user-images.githubusercontent.com/9815703/70438953-4e758380-1ad2-11ea-9c18-e7b238205c25.PNG)
+구글 / 아마존 음성인식 이용 예정 
 
+### 사용 한 모듈 종류 
+1. 시계 
+2. 날씨 
+3. 페이스 인식 
+4. 투드 리스트 
 
 
 개발일정 |  내용  
@@ -39,5 +41,6 @@ Team
 협업 도구 : Google docs, GitHumb  
 
 #### 개발 운영 환경 및 관련 사항 
+[라즈베리파이 Open CV 설치 방법](https://github.com/HUST-Robot/Capstone-design/issues/3)
 
 #### 설계이슈
