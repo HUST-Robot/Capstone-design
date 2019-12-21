@@ -41,6 +41,6 @@ Team
 협업 도구 : Google docs, GitHumb  
 
 #### 개발 운영 환경 및 관련 사항 
-[라즈베리파이 Open CV 설치 방법](https://github.com/HUST-Robot/Capstone-design/issues/3)
+- [라즈베리파이 Open CV 설치 방법](https://github.com/HUST-Robot/Capstone-design/issues/3)
 
 #### 설계이슈
