@@ -18,9 +18,10 @@ Module.register("weatherforecast",{
 		maxNumberOfDays: 7,
 		showRainAmount: false,
 		updateInterval: 10 * 60 * 1000, // every 10 minutes
-		animationSpeed: 1000,
+		animationSpeed: 100,
+		// 이거 수정해야함 !! 
 		timeFormat: config.timeFormat,
-		lang: config.language,
+		lang: "kr",
 		decimalSymbol: ".",
 		fade: true,
 		fadePoint: 0.25, // Start on 1/4th of the list.
@@ -28,7 +29,7 @@ Module.register("weatherforecast",{
 		scale: false,
 
 		initialLoadDelay: 2500, // 2.5 seconds delay. This delay is used to keep the OpenWeather API happy.
-		retryDelay: 2500,
+		retryDelay: 2500, // 요청실패시 
 
 		apiVersion: "2.5",
 		apiBase: "https://api.openweathermap.org/data/",
@@ -38,28 +39,9 @@ Module.register("weatherforecast",{
 		calendarClass: "calendar",
 		tableClass: "small",
 
-		roundTemp: false,
+		roundTemp: false
 
-		iconTable: {
-			"01d": "wi-day-sunny",
-			"02d": "wi-day-cloudy",
-			"03d": "wi-cloudy",
-			"04d": "wi-cloudy-windy",
-			"09d": "wi-showers",
-			"10d": "wi-rain",
-			"11d": "wi-thunderstorm",
-			"13d": "wi-snow",
-			"50d": "wi-fog",
-			"01n": "wi-night-clear",
-			"02n": "wi-night-cloudy",
-			"03n": "wi-night-cloudy",
-			"04n": "wi-night-cloudy",
-			"09n": "wi-night-showers",
-			"10n": "wi-night-rain",
-			"11n": "wi-night-thunderstorm",
-			"13n": "wi-night-snow",
-			"50n": "wi-night-alt-cloudy-windy"
-		},
+		
 	},
 
 	// create a variable for the first upcoming calendaar event. Used if no location is specified.
@@ -75,7 +57,8 @@ Module.register("weatherforecast",{
 
 	// Define required scripts.
 	getStyles: function() {
-		return ["weather-icons.css", "weatherforecast.css"];
+		// return ["weather-icons.css", "weatherforecast.css"];
+		return ["weatherforecast.css"];
 	},
 
 	// Define required translations.
@@ -91,7 +74,7 @@ Module.register("weatherforecast",{
 		Log.info("Starting module: " + this.name);
 
 		// Set locale.
-		moment.locale(config.language);
+		moment.locale("kr");
 
 		this.forecast = [];
 		this.loaded = false;
@@ -130,7 +113,7 @@ Module.register("weatherforecast",{
 			table.appendChild(row);
 
 			var dayCell = document.createElement("td");
-			dayCell.className = "day";
+			dayCell.className = "day" 
 			dayCell.innerHTML = forecast.day;
 			row.appendChild(dayCell);
 
@@ -143,6 +126,7 @@ Module.register("weatherforecast",{
 			iconCell.appendChild(icon);
 
 			var degreeLabel = "";
+			// 온도 C F K 표기 방법 
 			if (this.config.units === "metric" || this.config.units === "imperial") {
 				degreeLabel += "°";
 			}
@@ -332,6 +316,7 @@ Module.register("weatherforecast",{
 		var lastDay = null;
 		var forecastData = {};
 
+		
 		for (var i = 0, count = data.list.length; i < count; i++) {
 
 			var forecast = data.list[i];
@@ -347,7 +332,9 @@ Module.register("weatherforecast",{
 				hour = moment(forecast.dt, "X").format("H");
 			}
 
-			if (day !== lastDay) {
+			// 오늘 날씨 
+			if (day !== lastDay) 
+			{
 				var forecastData = {
 					day: day,
 					icon: this.config.iconTable[forecast.weather[0].icon],
@@ -363,7 +350,11 @@ Module.register("weatherforecast",{
 				if (this.forecast.length === this.config.maxNumberOfDays) {
 					break;
 				}
-			} else {
+
+			} 
+			// 4개 날씨 
+			else 
+			{
 				//Log.log("Compare max: ", forecast.temp.max, parseFloat(forecastData.maxTemp));
 				forecastData.maxTemp = forecast.temp.max > parseFloat(forecastData.maxTemp) ? this.roundValue(forecast.temp.max) : forecastData.maxTemp;
 				//Log.log("Compare min: ", forecast.temp.min, parseFloat(forecastData.minTemp));
@@ -371,8 +362,13 @@ Module.register("weatherforecast",{
 
 				// Since we don't want an icon from the start of the day (in the middle of the night)
 				// we update the icon as long as it's somewhere during the day.
-				if (hour >= 8 && hour <= 17) {
+				// 이부분 조정해야함 !! 
+			
+				Log.log("hour value = " + hour);
+				if (hour >= 3 && hour <= 5) { // 두개의 조건이 만족해야 실행 !! 
 					forecastData.icon = this.config.iconTable[forecast.weather[0].icon];
+					Log.log("if - > hour value = " + hour);
+					Log.log("test - > " + this.config.iconTable[forecast.weather[0].icon]);
 				}
 			}
 		}

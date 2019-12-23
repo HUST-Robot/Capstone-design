@@ -1,11 +1,140 @@
-.weatherforecast .day {
-  padding-left: 0;
-  padding-right: 25px;
-}
+/*
+    	"01d": "wi-day-sunny", -> day.svg 
+			"02d": "wi-day-cloudy", -> day.cloudy.svg
+			"03d": "wi-cloudy", -> cloudy-day-1
+			"04d": "wi-cloudy-windy", -> 이미지 찾아서 넣어줄것 
+			"09d": "wi-showers", -> rainy-1.svg
+      "10d": "wi-rain", -> rainy-5.svg
+      "11d": "wi-thunderstorm", -> thunder.svg
+      "13d": "wi-day-sunny",  -> day.svg 
+      "50d": "wi-fog",-> ?? 안개 관련 이미지 가 없음 
+			"01n": "wi-night-clear", -> night.svg  
+			"02n": "wi-night-cloudy", -> cloudy-night-1.svg 
+			"03n": "wi-night-cloudy", -> cloudy-night-2.svg
+			"04n": "wi-night-cloudy", -> cloudy-night-3.svg
+			"09n": "wi-night-showers", -> ?? 소나기 이미지 없음 찾아야서 넣어야함 
+			"10n": "wi-night-rain", -> rainy-6.svg 
+			"11n": "wi-night-thunderstorm", -> thunder.svg 
+			"13n": "wi-night-snow", -> snowy-6.svg 여기서 부터 작업 해야함 
+			"50n": "wi-night-alt-cloudy-windy" -> cloudy-night-1.svg
+*/
+  
+  /* Aenderungen Wettervorhersage */
 
-.weatherforecast .weather-icon {
+
+
+.weatherforecast .wi-day-sunny 
+{
+  content: url("/css/icons/day.svg");
+  height: 50px;
   padding-right: 30px;
   text-align: center;
+}
+
+.weatherforecast .wi-day-cloudy 
+{
+  content: url("/css/icons/cloudy-day-1.svg");
+  height: 45px;
+  padding-right: 30px;
+  text-align: center;
+}
+
+.weatherforecast .wi-rain {
+content: url("/css/icons/rainy-6.svg");
+padding-right: 30px;
+text-align: center;
+height: 45px;
+}
+
+.weatherforecast .wi-night-clear {
+content: url("/css/icons/night.svg");
+padding-right: 30px;
+text-align: center;
+}
+
+.weatherforecast .wi-night-cloudy {
+content: url("/css/icons/cloudy-night-2.svg");
+padding-right: 30px;
+text-align: center;
+height: 45px;
+
+}
+
+.weatherforecast .wi-cloudy {
+content: url("/css/icons/cloudy.svg");
+padding-right: 30px;
+text-align: center;
+height: 50px;
+
+}
+
+.weatherforecast .wi-showers {
+content: url("/css/icons/rainy-7.svg");
+padding-right: 30px;
+text-align: center;
+}
+
+.weatherforecast .wi-thunderstorm {
+content: url("/css/icons/thunder.svg");
+padding-right: 30px;
+text-align: center;
+}
+
+.weatherforecast .wi-snow {
+content: url("/css/icons/snowy-6.svg");
+padding-right: 30px;
+text-align: center;
+}
+
+.weatherforecast .wi-cloudy-windy {
+content: url("/css/icons/cloudy-day-3.svg");
+padding-right: 30px;
+text-align: center;
+height: 45px;
+
+}
+
+.weatherforecast .wi-night-rain {
+content: url("/css/icons/rainy-6.svg");
+padding-right: 30px;
+text-align: center;
+height: 45px;
+}
+
+.weatherforecast .wi-night-snow {
+content: url("/css/icons/snowy-6.svg");
+padding-right: 30px;
+text-align: center;
+}
+
+.weatherforecast .wi-night-thunderstorm {
+content: url("/css/icons/thunder.svg");
+padding-right: 30px;
+text-align: center;
+}
+
+.weatherforecast .wi-night-showers {
+content: url("/css/icons/rainy-7.svg");
+padding-right: 30px;
+text-align: center;
+}
+
+.weatherforecast .wi-fog {
+content: url("/css/icons/cloudy.svg");
+padding-right: 30px;
+text-align: center;
+}
+
+.weatherforecast .wi-night-alt-cloudy-windy {
+content: url("/css/icons/cloudy-night-1.svg");
+padding-right: 30px;
+text-align: center;
+
+}
+
+.weatherforecast .day {
+  padding-left: 0px;
+  padding-right: 30px;
 }
 
 .weatherforecast .min-temp {
@@ -25,3 +154,4 @@
 .weatherforecast tr.colored .max-temp {
   color: #FF8E99;
 }
+
