@@ -11,7 +11,7 @@
 [Magic Mirror2](https://magicmirror.builders/) Open Source code 바탕으로 제작  
 
 ### 아두이노 인체감지 센서 
-인체 감지 센서를 이용하여 사용자를 감지하여 Mirror 테두리 무브등 기능 
+인체 감지 센서를 이용하여 사용자를 감지하여 Mirror 테두리 무드등 기능 
 
 ### 음성인식 
 구글 / 아마존 음성인식 이용 예정 
