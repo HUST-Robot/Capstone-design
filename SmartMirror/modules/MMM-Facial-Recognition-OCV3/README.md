@@ -45,7 +45,8 @@ To setup the module in MagicMirror², add the following script int the `config.j
         // force the use of a usb webcam on raspberry pi (on other platforms this is always true automatically)
         useUSBCam: true,
         // Path to your training xml
-        trainingFile: '/home/pi/MagicMirror/modules/MMM-Facial-Recognition-OCV3/training.xml',
+        // training.xml 파일 존재하는 경로로 변경 (MMM-Facial-Recognition-OCV3) 
+        trainingFile: '/home/pi/Capstone-design/SmartMirror/modules/MMM-Facial-Recognition-OCV3/training.xml',
         // recognition intervall in seconds (smaller number = faster but CPU intens!)
         interval: 2,
         // Logout delay after last recognition so that a user does not get instantly logged out if he turns away from the mirror for a few seconds
