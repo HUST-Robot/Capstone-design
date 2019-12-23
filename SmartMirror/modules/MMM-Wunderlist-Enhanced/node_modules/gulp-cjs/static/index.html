@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Test Runner</title>
+  <link rel="stylesheet" type="text/css" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+  <div id="mocha"></div>
+  <script src="../node_modules/mocha/mocha.js"></script>
+  {{FILES}}
+  <script type="text/javascript">
+    mocha.reporter('html');
+    mocha.run();
+  </script>
+</body>
+</html>

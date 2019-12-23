@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "dangerfile.ts",
+    "dangerfile.lite.ts",
+    "scripts",
+    "node_modules",
+    "source/**/fixtures/*",
+    "source/**/_tests/*",
+    "distribution",
+    "types"
+  ]
+}
