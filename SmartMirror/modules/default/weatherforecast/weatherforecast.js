@@ -90,13 +90,15 @@ Module.register("weatherforecast",{
 
 		if (this.config.appid === "") {
 			wrapper.innerHTML = "Please set the correct openweather <i>appid</i> in the config for module: " + this.name + ".";
-			wrapper.className = "dimmed light small";
+//			wrapper.className = "dimmed light small";
+			wrapper.className = "bright light small";
 			return wrapper;
 		}
 
 		if (!this.loaded) {
 			wrapper.innerHTML = this.translate("LOADING");
-			wrapper.className = "dimmed light small";
+//			wrapper.className = "dimmed light small";
+			wrapper.className = "bright light small";
 			return wrapper;
 		}
 

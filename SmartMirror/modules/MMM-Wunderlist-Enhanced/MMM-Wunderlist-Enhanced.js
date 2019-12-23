@@ -132,7 +132,7 @@ Module.register("MMM-Wunderlist-Enhanced", {
       if (self.config.iconPosition == "left") {
         tds = bulletTd + tds;
       } else {
-        tds = tds + bulletTd; 
+        tds = tds + bulletTd; normal
       }
     }
 
@@ -177,7 +177,8 @@ Module.register("MMM-Wunderlist-Enhanced", {
     }
     var self = this;
     var wrapper = document.createElement("table");
-    wrapper.className = "normal small wunderlist";
+    //wrapper.className = "normal small wunderlist";
+    wrapper.className = "bright small wunderlist";
     if (self.config.spaced) {
       wrapper.className += " spaced";
     }

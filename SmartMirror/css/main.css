@@ -1,7 +1,8 @@
 html {
   cursor: none;
   overflow: hidden;
-  background-image: url("/css/background/background1.jpg");
+  background: #000;
+/*  background-image: url("/css/background/background1.jpg"); */
 }
 
 ::-webkit-scrollbar {
@@ -111,6 +112,18 @@ sup {
 /**
  * Module styles.
  */
+ 
+.module.weatherforecast {
+  background-color: rgba(200, 200, 200, 0.5);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.module.MMM-Wunderlist-Enhanced {
+  background-color: rgba(100, 100, 100, 0.5);
+  border-radius: 8px;
+  padding: 8px;
+}
 
 .module {
   margin-bottom: 30px;
