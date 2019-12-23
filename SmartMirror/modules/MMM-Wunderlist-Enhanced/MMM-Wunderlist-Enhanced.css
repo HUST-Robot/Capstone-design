@@ -1,0 +1,22 @@
+.wunderlist.spaced * td {
+  padding-bottom: 10px;
+}
+
+.wunderlist tr + tr th {
+  padding-top: 15px;
+}
+
+.assignee {
+  display: inline-flex;
+  align-items: left;
+  justify-content: center;
+  background-color: #aaa;
+  color: #666;
+  min-width: 1em;
+  border-radius: 50%;
+  vertical-align: middle;
+  padding: 2px;
+  text-transform: uppercase;
+  margin-right: 2px;
+  margin-left: 2px;
+}
