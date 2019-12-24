@@ -38,12 +38,13 @@ Module.register('MMM-Facial-Recognition-OCV3',{
 		return {
 			en: "translations/en.json",
 			de: "translations/de.json",
-      			es: "translations/es.json",
-      			zh: "translations/zh.json",
-      			nl: "translations/nl.json",
+      		es: "translations/es.json",
+      		zh: "translations/zh.json",
+      		nl: "translations/nl.json",
 			sv: "translations/sv.json",
 			fr: "translations/fr.json",
-			id: "translations/id.json"
+			id: "translations/id.json",
+			kr: "translations/kr.json"
 		};
 	},
 
@@ -89,6 +90,8 @@ Module.register('MMM-Facial-Recognition-OCV3',{
 		if (payload.action == "login"){
 			if (this.current_user_id != payload.user){
 				this.logout_user()
+				// 추가 테스트 코드 
+				Log.log("logout_user test" + logout_user);
 			}
 			if (payload.user == -1){
 				this.current_user = this.translate("stranger")
@@ -106,6 +109,8 @@ Module.register('MMM-Facial-Recognition-OCV3',{
 		}
 		else if (payload.action == "logout"){
 			this.logout_user()
+			// 추가 
+			this.sendNotification("SHOW_ALERT", {type: "notification", message: this.training("message").replace("%stranger", this.current_user), title: translate("title")});
 			this.current_user = null;
 		}
 	},
