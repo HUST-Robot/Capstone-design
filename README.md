@@ -52,3 +52,4 @@ Team
 - [라즈베리파이 Open CV 설치 방법](https://github.com/HUST-Robot/Capstone-design/issues/3)
 
 #### 설계이슈
+- [Error: Cannot find module 'node_helper' 에러가 발생한 경우 고치는 방법](https://github.com/HUST-Robot/Capstone-design/issues/8)
