@@ -59,3 +59,4 @@ Team
 
 #### 설계이슈
 - [Error: Cannot find module 'node_helper' 에러가 발생한 경우 고치는 방법](https://github.com/HUST-Robot/Capstone-design/issues/8)
+- [.DS_Store 파일을 git에 포함시키지 않기](https://github.com/HUST-Robot/Capstone-design/issues/12)
