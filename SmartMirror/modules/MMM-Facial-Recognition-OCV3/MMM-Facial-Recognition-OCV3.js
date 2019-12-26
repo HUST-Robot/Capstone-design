@@ -91,7 +91,7 @@ Module.register('MMM-Facial-Recognition-OCV3',{
 			if (this.current_user_id != payload.user){
 				this.logout_user()
 				// 추가 테스트 코드 
-				Log.log("logout_user test" + logout_user);
+				Log.log("logout_user test" + this.logout_user());																	
 			}
 			if (payload.user == -1){
 				this.current_user = this.translate("stranger")
@@ -110,7 +110,7 @@ Module.register('MMM-Facial-Recognition-OCV3',{
 		else if (payload.action == "logout"){
 			this.logout_user()
 			// 추가 
-			this.sendNotification("SHOW_ALERT", {type: "notification", message: this.training("message").replace("%stranger", this.current_user), title: translate("title")});
+//			this.sendNotification("SHOW_ALERT", {type: "notification", message: this.training("message").replace("%stranger", this.current_user), title: translate("title")});
 			this.current_user = null;
 		}
 	},

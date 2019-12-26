@@ -1,0 +1,184 @@
+{
+    "manifest": {
+        "displayName": "MagicMirror Controller",
+        "invocationName": "magic mirror controller",
+        "category": "PRODUCTIVITY"
+    },
+    "actions": [
+        {
+            "name": "com.example.actions.REBOOT",
+            "availability": {
+                "deviceClasses": [
+                    {
+                        "assistantSdkDevice": {}
+                    }
+                ]
+            },
+            "intent": {
+                "name": "com.example.intents.REBOOT",
+                "parameters": [
+                    {
+                        "name": "delay",
+                        "type": "SchemaOrg_Number"
+                    },
+                    {
+                        "name": "unit",
+                        "type": "Unit"
+                    },
+                    {
+                        "name": "now",
+                        "type": "Now"
+                    }
+                ],
+                "trigger": {
+                    "queryPatterns": [
+                        "reboot after $SchemaOrg_Number:delay $Unit:unit",
+                        "reboot $Now:now"
+                    ]
+                }
+            },
+            "fulfillment": {
+                "staticFulfillment": {
+                    "templatedResponse": {
+                        "items": [
+                            {
+                                "simpleResponse": {
+                                    "textToSpeech": "Your Mirror will be rebooted, My lord."
+                                }
+                            },
+                            {
+                                "deviceExecution": {
+                                    "command": "com.example.commands.REBOOT",
+                                    "params": {
+                                        "delay": "$delay",
+                                        "unit": "$unit",
+                                        "now": "$now"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "com.example.actions.PAGE",
+            "availability": {
+                "deviceClasses": [
+                    {
+                        "assistantSdkDevice": {}
+                    }
+                ]
+            },
+            "intent": {
+                "name": "com.example.intents.PAGE",
+                "parameters": [
+                    {
+                        "name": "number",
+                        "type": "SchemaOrg_Number"
+                    },
+                    {
+                        "name": "incordec",
+                        "type": "IncOrDec"
+                    }
+                ],
+                "trigger": {
+                    "queryPatterns": [
+                        "page $SchemaOrg_Number:number",
+                        "change the page to $SchemaOrg_Number:number",
+                        "set the page to $SchemaOrg_Number:number",
+                        "$IncOrDec:incordec page",
+                        "page $IncOrDec:incordec",
+                        "move $IncOrDec:incordec"
+                    ]
+                }
+            },
+            "fulfillment": {
+                "staticFulfillment": {
+                    "templatedResponse": {
+                        "items": [
+                            {
+                                "simpleResponse": {
+                                    "textToSpeech": "Yes, My lord!"
+                                }
+                            },
+                            {
+                                "deviceExecution": {
+                                    "command": "com.example.commands.PAGE",
+                                    "params": {
+                                        "incordec": "$incordec",
+                                        "number": "$number"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "types": [
+        {
+            "name": "$Now",
+            "entities": [
+                {
+                    "key": "now",
+                    "synonyms": [
+                        "now",
+                        "immediately",
+                        "ASAP"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "$Unit",
+            "entities": [
+                {
+                    "key": "SEC",
+                    "synonyms": [
+                        "second",
+                        "seconds"
+                    ]
+                },
+                {
+                    "key": "MIN",
+                    "synonyms": [
+                        "minute",
+                        "minutes"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "$IncOrDec",
+            "entities": [
+                {
+                    "key": "INC",
+                    "synonyms": [
+                        "next",
+                        "forward",
+                        "advance",
+                        "increment",
+                        "increase",
+                        "plus",
+                        "up",
+                        "jump"
+                    ]
+                },
+                {
+                    "key": "DEC",
+                    "synonyms": [
+                        "previous",
+                        "back",
+                        "backward",
+                        "decrement",
+                        "decrease",
+                        "minus",
+                        "down"
+                    ]
+                }
+            ]
+        }
+    ]
+}
