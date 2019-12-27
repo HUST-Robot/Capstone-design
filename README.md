@@ -17,6 +17,18 @@
 구글 음성인식 이용 / snowboy 이용한 hot word detection
 
 ### 사용 한 모듈 종류 및 변경사항
+공통
+ 1.
+ 2.
+ 
+얼굴인식
+ 1. 
+ 2.
+
+음성인식
+ 1.
+ 2.
+
 1. 시계 [Clock](https://github.com/MichMich/MagicMirror/tree/master/modules/default/clock)
 2. 날씨 [Weather Forecast](https://github.com/MichMich/MagicMirror/tree/master/modules/default/weatherforecast)
   - 변경사항 : 날씨 아이콘 이미지 변경
