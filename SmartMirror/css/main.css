@@ -2,7 +2,7 @@ html {
   cursor: none;
   overflow: hidden;
   background: #000;
-/*  background-image: url("/css/background/background1.jpg"); */
+  background-image: url("/css/background/background_cat3.jpg");
 }
 
 ::-webkit-scrollbar {
@@ -10,10 +10,10 @@ html {
 }
 
 body {
-  margin: 60px;
+  margin: 20px;
   position: absolute;
-  height: calc(100% - 120px);
-  width: calc(100% - 120px);
+  height: calc(100% - 40px);
+  width: calc(100% - 40px);
   color: #aaa;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 400;
@@ -21,6 +21,7 @@ body {
   line-height: 1.5em;
   -webkit-font-smoothing: antialiased;
 }
+
 
 /**
  * Default styles.
@@ -114,13 +115,25 @@ sup {
  */
  
 .module.weatherforecast {
-  background-color: rgba(200, 200, 200, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 8px;
   padding: 8px;
 }
 
-.module.MMM-Wunderlist-Enhanced {
-  background-color: rgba(100, 100, 100, 0.5);
+.module.MMM-CalendarWeek {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.module.calendar_monthly {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.module.MMM-AirQuality {
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   padding: 8px;
 }
