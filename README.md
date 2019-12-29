@@ -20,7 +20,7 @@ Google assistant / snowboy 이용한 hot word detection
 공통
  1. 도시 공기 상태 [MMM-AirQuality](https://github.com/CFenner/MMM-AirQuality)
  2. 시계 [Clock](https://github.com/MichMich/MagicMirror/tree/master/modules/default/clock)
- 3. 날씨 [Weather Forecast](https://github.com/MichMich/MagimmcMirror/tree/master/modules/default/weatherforecast)
+ 3. 날씨 [Weather Forecast](https://github.com/MichMich/MagicMirror/tree/master/modules/default/weatherforecast)
    - 변경사항 : 날씨 아이콘 이미지 변경
  4. Calendar week [MMM-CalendarWeek](https://github.com/heskja/MMM-CalendarWeek)
  5. Calendar Monthly [Calendar Monthly](https://github.com/KirAsh4/calendar_monthly)
