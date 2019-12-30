@@ -25,7 +25,7 @@
 
 .weatherforecast .wi-day-sunny 
 {
-  content: url("/css/icons/day.svg");
+  content: url("/css/4c/clear-day.svg");
   height: 50px;
   padding-right: 30px;
   text-align: center;
@@ -33,27 +33,29 @@
 
 .weatherforecast .wi-day-cloudy 
 {
-  content: url("/css/icons/cloudy-day-1.svg");
+  content: url("/css/4c/cloudy.svg");
   height: 45px;
   padding-right: 30px;
   text-align: center;
 }
 
 .weatherforecast .wi-rain {
-content: url("/css/icons/rainy-6.svg");
+content: url("/css/4c/rain.svg");
 padding-right: 30px;
 text-align: center;
 height: 45px;
 }
 
 .weatherforecast .wi-night-clear {
-content: url("/css/icons/night.svg");
-padding-right: 30px;
+content: url("/css/4c/clear-night.svg");
 text-align: center;
+padding-right: 30px;
+width: 50px;
+
 }
 
 .weatherforecast .wi-night-cloudy {
-content: url("/css/icons/cloudy-night-2.svg");
+content: url("/css/4c/cloudy.svg");
 padding-right: 30px;
 text-align: center;
 height: 45px;
@@ -61,7 +63,7 @@ height: 45px;
 }
 
 .weatherforecast .wi-cloudy {
-content: url("/css/icons/cloudy.svg");
+content: url("/css/4c/cloudy.svg");
 padding-right: 30px;
 text-align: center;
 height: 50px;
@@ -69,25 +71,25 @@ height: 50px;
 }
 
 .weatherforecast .wi-showers {
-content: url("/css/icons/rainy-7.svg");
+content: url("/css/4c/hail.svg");
 padding-right: 30px;
 text-align: center;
 }
 
 .weatherforecast .wi-thunderstorm {
-content: url("/css/icons/thunder.svg");
+content: url("/css/4c/thunderstorm.svg");
 padding-right: 30px;
 text-align: center;
 }
 
 .weatherforecast .wi-snow {
-content: url("/css/icons/snowy-6.svg");
+content: url("/css/4c/snow.svg");
 padding-right: 30px;
 text-align: center;
 }
 
 .weatherforecast .wi-cloudy-windy {
-content: url("/css/icons/cloudy-day-3.svg");
+content: url("/css/4c/wind.svg");
 padding-right: 30px;
 text-align: center;
 height: 45px;
@@ -95,38 +97,38 @@ height: 45px;
 }
 
 .weatherforecast .wi-night-rain {
-content: url("/css/icons/rainy-6.svg");
+content: url("/css/4c/rain.svg");
 padding-right: 30px;
 text-align: center;
 height: 45px;
 }
 
 .weatherforecast .wi-night-snow {
-content: url("/css/icons/snowy-6.svg");
+content: url("/css/4c/snow.svg");
 padding-right: 30px;
 text-align: center;
 }
 
 .weatherforecast .wi-night-thunderstorm {
-content: url("/css/icons/thunder.svg");
+content: url("/css/4c/thunderstorm.svg");
 padding-right: 30px;
 text-align: center;
 }
 
 .weatherforecast .wi-night-showers {
-content: url("/css/icons/rainy-7.svg");
+content: url("/css/4c/hail.svg");
 padding-right: 30px;
 text-align: center;
 }
 
 .weatherforecast .wi-fog {
-content: url("/css/icons/cloudy.svg");
+content: url("/css/4c/fog.svg");
 padding-right: 30px;
 text-align: center;
 }
 
 .weatherforecast .wi-night-alt-cloudy-windy {
-content: url("/css/icons/cloudy-night-1.svg");
+content: url("/css/4c/partly-cloudy-night.svg");
 padding-right: 30px;
 text-align: center;
 
