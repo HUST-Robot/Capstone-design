@@ -7,60 +7,51 @@
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(144, PIN, NEO_GRB + NEO_KHZ800);
 
 // 적외선 센서 핀번호 선언 (입력)
-volatile int motion = 2; 
-// 릴레이 핀번호 선언 (출력)
-volatile int relay = 4;
+int motion = 12; 
+unsigned long pm=0;   //previous millis time
 
-// 최적화 방지코드
-//volatile int motion_state = 0;
 void setup() {
 
 // 적외선센서의 핀을 INPUT모드로 선언
 pinMode(motion,INPUT);
-// 릴레이 핀을 OUPUT으로 선언 
-pinMode(relay,OUTPUT);
-//digitalWrite(relay, LOW);
+//pinMode(motion, INPUT_PULLUP);
 
- // 모션제어(디지털핀)으로부터 인터럽트 검사
-attachInterrupt(digitalPinToInterrupt(2), LEDs, CHANGE);
 // 시리얼 통신 속도 설정
 Serial.begin(9600);
 strip.begin(); //네오픽셀을 초기화하기 위해 모든LED를 off시킨다
 strip.show(); 
+delay(100);
 }
 
+//TEST
 void loop() {
-          //아래의 순서대로 NeoPixel을 반복한다.
-        //  colorWipe(strip.Color(255, 0, 0), 50); //빨간색 출력
-        //  colorWipe(strip.Color(0, 255, 0), 50); //녹색 출력
-         // colorWipe(strip.Color(0, 0, 255), 50); //파란색 출력
+  unsigned long cm = millis();    //current millis time
 
-          theaterChase(strip.Color(127, 127, 127), 0); //흰색 출력
-         // theaterChase(strip.Color(127,   0,   0), 50); //빨간색 출력
-        //  theaterChase(strip.Color(  0,   0, 127), 50); //파란색 출력
+  Serial.println(digitalRead(motion));    //PIR 센서 값 확인
 
-          //화려하게 다양한 색 출력
-         // rainbow(20);
-         // rainbowCycle(20);
-         // theaterChaseRainbow(50);
-}
-
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-//LEDs 인터럽트 서비스 루틴 (ISR) 코드. LOW(움직임 감지 없을때 동작)
-
-void LEDs()
-{
-  if(digitalRead(motion)== 0)
-  digitalWrite(relay, LOW);
+  if(digitalRead(motion))
+  {
+    Serial.println("ON");
+    theaterChase(strip.Color(100,100,50),0); //ON (강한 출력)
+    pm=cm;
+  }
   else
-  digitalWrite(relay, HIGH);
+  {
+        if( cm - pm > 10000){
+          Serial.println("OFF");
+          theaterChase(strip.Color(0, 0, 0), 0);  // OFF (끄기)
+        }else if( cm - pm > 5000){
+          Serial.println("save");
+          theaterChase(strip.Color(30, 30, 15), 0); //절전 모드 (약한 출력)
+        }
+        else{
+          Serial.println("maintain");
+          theaterChase(strip.Color(100,100,50), 0); //유지 모드 (강한 출력)
+        }
+  }
 }
 
 
-
-//NEO PIXEL 함수
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //NeoPixel에 달린 LED를 각각 주어진 인자값 색으로 채워나가는 함수
 void colorWipe(uint32_t c, uint8_t wait) {
   for(uint16_t i=0; i<strip.numPixels(); i++) {
