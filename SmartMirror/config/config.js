@@ -142,9 +142,6 @@ var config = {
 			header: 'Wunderlist', // This is optional
 			config: {
 				// See 'Configuration options' for more information.
-							accessToken: "b4516440e83b64039242dd24762eaa937628d7bfb8b288497759a8964934",  
-							clientID: "f1d73738bf3acb3f1f3d", 
-							lists: ["Inbox", "Test"]			
 			},
 			classes: 'default everyone'
 		},
