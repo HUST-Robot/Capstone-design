@@ -47,10 +47,10 @@
     "http-auth": "^3.2.3",
     "jsdom": "^11.6.2",
     "jshint": "^2.10.2",
-    "mocha": "^4.1.0",
+    "mocha": "^10.2.0",
     "mocha-each": "^1.1.0",
-    "mocha-logger": "^1.0.6",
-    "spectron": "^3.8.0",
+    "mocha-logger": "^1.0.8",
+    "spectron": "^19.0.0",
     "stylelint": "latest",
     "stylelint-config-standard": "latest",
     "time-grunt": "latest"
